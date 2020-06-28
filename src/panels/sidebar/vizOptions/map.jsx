@@ -26,6 +26,7 @@ class MapOptions extends React.Component {
           <Input
             type="number"
             name="alpha"
+            step="0.1"
             data-id="alpha"
             value={alpha}
             onChange={this.updateOptions}

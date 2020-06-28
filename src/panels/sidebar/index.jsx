@@ -7,10 +7,6 @@ import GlobalOptions from './globalOptions';
 import {
   ButtonPrimary,
   Container,
-  Flex,
-  FlexSpace,
-  Input,
-  InputLabel,
   Separator,
   SidebarCollapse,
   SidebarWrapper,
@@ -104,38 +100,16 @@ class Sidebar extends React.Component {
                 />
               </span>
             </RosStatus>
-            <form onSubmit={this.onSubmit}>
-              <InputLabel>ROS Endpoint</InputLabel>
-              <Flex>
-                <Input
-                  type="text"
-                  value={rosInput}
-                  onChange={this.updateRosInput}
-                />
-                <FlexSpace />
-                <ButtonPrimary type="submit">
-                  {_.includes(
-                    [
-                      ROS_SOCKET_STATUSES.CONNECTED,
-                      ROS_SOCKET_STATUSES.CONNECTING,
-                    ],
-                    rosStatus,
-                  )
-                    ? 'Disconnect'
-                    : 'Connect'}
-                </ButtonPrimary>
-              </Flex>
-            </form>
-          </Container>
-          <Separator />
-          {rosStatus === ROS_SOCKET_STATUSES.CONNECTED && (
-            <>
-              <GlobalOptions
+            <GlobalOptions
                 framesList={framesList}
                 globalOptions={globalOptions}
                 updateGlobalOptions={updateGlobalOptions}
                 toggleConfigurationModal={toggleConfigurationModal}
               />
+          </Container>
+          <Separator />
+          {rosStatus === ROS_SOCKET_STATUSES.CONNECTED && (
+            <>
               <Separator />
               <SidebarVizContainer>
                 <ButtonPrimary type="button" onClick={toggleAddModal}>

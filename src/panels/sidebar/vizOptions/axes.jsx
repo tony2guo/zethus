@@ -18,6 +18,7 @@ class AxesOptions extends React.PureComponent {
           <Input
             name="axesLength"
             type="number"
+            step="0.1"
             data-id="axesLength"
             value={axesLength}
             onChange={updateOptions}
@@ -28,6 +29,7 @@ class AxesOptions extends React.PureComponent {
           <Input
             name="axesRadius"
             type="number"
+            step="0.1"
             data-id="axesRadius"
             value={axesRadius}
             onChange={updateOptions}

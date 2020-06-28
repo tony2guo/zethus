@@ -232,6 +232,7 @@ class Wrapper extends React.Component {
 
   toggleAddModal() {
     const { addModalOpen } = this.state;
+    this.refreshRosData();
     this.setState({
       addModalOpen: !addModalOpen,
     });
@@ -245,6 +246,7 @@ class Wrapper extends React.Component {
   }
 
   toggleGraphModal() {
+    this.refreshRosData();
     this.setState(({ graphModalOpen }) => ({
       graphModalOpen: !graphModalOpen,
     }));
@@ -391,6 +393,7 @@ class Wrapper extends React.Component {
                 ros={this.ros}
                 collapsed={collapsedInfo}
                 rosTopics={rosTopics}
+                refreshRosData={this.refreshRosData}
                 updateInfoTabs={this.updateInfoTabs}
                 togglePanelCollapse={this.togglePanelCollapse}
                 topics={infoTabs}

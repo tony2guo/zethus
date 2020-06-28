@@ -170,6 +170,7 @@ class Info extends React.PureComponent {
   }
 
   toggleAddModal(addModalOpen) {
+    this.props.refreshRosData();
     this.setState({ addModalOpen });
   }
 

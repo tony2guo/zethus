@@ -45,6 +45,7 @@ class PointCloudOptions extends React.PureComponent {
           <Input
             type="number"
             name="size"
+            step="0.1"
             data-id="size"
             value={size}
             onChange={this.updateOptions}

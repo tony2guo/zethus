@@ -5,9 +5,9 @@ import { TF_MESSAGE_TYPES } from './vizOptions';
 const { DEFAULT_OPTIONS_SCENE } = CONSTANTS;
 
 export const ROS_SOCKET_STATUSES = {
-  INITIAL: 'Idle. Not Connected',
+  INITIAL: 'Not Connected',
   CONNECTING: 'Connecting',
-  CONNECTED: 'Connected successfully',
+  CONNECTED: 'Connected',
   CONNECTION_ERROR: 'Error in connection',
 };
 
@@ -46,7 +46,7 @@ export const DEFAULT_CONFIG = {
     },
   },
   ros: {
-    endpoint: 'ws://localhost:9090',
+    endpoint: "ws://" + window.location.host + "/jupyterlab-ros/bridge",
   },
   infoTabs: [],
   visualizations: [],

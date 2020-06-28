@@ -50,6 +50,7 @@ class LaserScanOptions extends React.PureComponent {
           <Input
             type="number"
             name="size"
+            step="0.1"
             data-id="size"
             value={size}
             onChange={this.updateOptions}
@@ -60,6 +61,7 @@ class LaserScanOptions extends React.PureComponent {
           <Input
             type="number"
             name="alpha"
+            step="0.1"
             data-id="alpha"
             value={alpha}
             onChange={this.updateOptions}

@@ -37,6 +37,7 @@ class OdometryOptions extends React.PureComponent {
           <Input
             name="positionTolerance"
             type="number"
+            step="0.1"
             value={positionTolerance}
             data-id="positionTolerance"
             onChange={this.updateOptions}
@@ -46,6 +47,7 @@ class OdometryOptions extends React.PureComponent {
           <Input
             name="angleTolerance"
             type="number"
+            step="0.1"
             data-id="angleTolerance"
             value={angleTolerance}
             onChange={this.updateOptions}
@@ -55,6 +57,7 @@ class OdometryOptions extends React.PureComponent {
           <Input
             name="keep"
             type="number"
+            step="0.1"
             data-id="keep"
             value={keep}
             onChange={this.updateOptions}

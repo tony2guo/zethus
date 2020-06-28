@@ -30,6 +30,7 @@ class ArrowOptions extends React.PureComponent {
           <Input
             name="alpha"
             type="number"
+            step="0.1"
             value={alpha}
             data-id="alpha"
             onChange={updateOptions}
@@ -40,6 +41,7 @@ class ArrowOptions extends React.PureComponent {
           <Input
             name="shaftLength"
             type="number"
+            step="0.1"
             value={shaftLength}
             data-id="shaftLength"
             onChange={updateOptions}
@@ -50,6 +52,7 @@ class ArrowOptions extends React.PureComponent {
           <Input
             name="shaftRadius"
             type="number"
+            step="0.1"
             value={shaftRadius}
             data-id="shaftRadius"
             onChange={updateOptions}
@@ -60,6 +63,7 @@ class ArrowOptions extends React.PureComponent {
           <Input
             name="headLength"
             type="number"
+            step="0.1"
             value={headLength}
             data-id="headLength"
             onChange={updateOptions}
@@ -70,6 +74,7 @@ class ArrowOptions extends React.PureComponent {
           <Input
             name="headRadius"
             type="number"
+            step="0.1"
             value={headRadius}
             data-id="headRadius"
             onChange={updateOptions}

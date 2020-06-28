@@ -5,8 +5,8 @@ import { ROS_SOCKET_STATUSES } from '../../utils';
 
 // In seconds
 const MIN_TIMER_TIME = 0;
-const MAX_TIMER_TIME = 100;
-const TIMER_INCREMENT = 5;
+const MAX_TIMER_TIME = 60;
+const TIMER_INCREMENT = 0;
 const ONE_SECOND = 1000;
 
 class RosReconnectHandler extends React.Component {

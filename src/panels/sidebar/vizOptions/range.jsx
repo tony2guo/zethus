@@ -33,6 +33,7 @@ class RangeOptions extends React.PureComponent {
           <Input
             type="number"
             name="alpha"
+            step="0.1"
             data-id="alpha"
             value={alpha}
             onChange={this.updateOptions}

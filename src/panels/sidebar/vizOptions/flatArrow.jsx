@@ -29,6 +29,7 @@ class FlatArrowOptions extends React.PureComponent {
           <Input
             name="alpha"
             type="number"
+            step="0.1"
             value={alpha}
             data-id="alpha"
             onChange={updateOptions}
@@ -39,6 +40,7 @@ class FlatArrowOptions extends React.PureComponent {
           <Input
             name="arrowLength"
             type="number"
+            step="0.1"
             data-id="arrowLength"
             value={arrowLength}
             onChange={updateOptions}
