@@ -4,7 +4,7 @@ import { includes } from 'lodash';
 import { ROS_SOCKET_STATUSES } from '../../utils';
 
 // In seconds
-const MIN_TIMER_TIME = 0;
+const MIN_TIMER_TIME = 5;
 const MAX_TIMER_TIME = 60;
 const TIMER_INCREMENT = 0;
 const ONE_SECOND = 1000;
