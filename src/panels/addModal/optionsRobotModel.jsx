@@ -51,7 +51,10 @@ class RobotModelOptions extends React.Component {
       const robotInstance = new Amphion.RobotModel(ros, topicName);
       robotInstance.getPackages(packages => {
         this.setState({
-          packages: _.mapValues(_.keyBy(packages), p => `/${p}`),
+          packages: _.mapValues(
+            _.keyBy(packages),
+            p => `jupyterlab-ros/rospkgs/${p}`,
+          ),
           status: statuses.loaded,
         });
       });

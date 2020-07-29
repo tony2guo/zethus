@@ -25,11 +25,19 @@ class RobotModelLinksJoints extends React.PureComponent {
   render() {
     const { jointsCollapsed, linksCollapsed } = this.state;
     const { vizInstance } = this.props;
-    
-    const { urdfObject } = vizInstance ? vizInstance[0] : null;
-    const joints = urdfObject ? urdfObject.joints : null;
-    const links = urdfObject ? urdfObject.links : null;
-    
+
+    let joints = null;
+    let links = null;
+
+    if (vizInstance) {
+      let v = vizInstance;
+      let rest = null;
+      if (Array.isArray(vizInstance)) [v, ...rest] = vizInstance;
+
+      const urdfObject = v ? v.urdfObject : null;
+      joints = urdfObject ? urdfObject.joints : null;
+      links = urdfObject ? urdfObject.links : null;
+    }
 
     return (
       <>

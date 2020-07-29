@@ -101,11 +101,11 @@ class Sidebar extends React.Component {
               </span>
             </RosStatus>
             <GlobalOptions
-                framesList={framesList}
-                globalOptions={globalOptions}
-                updateGlobalOptions={updateGlobalOptions}
-                toggleConfigurationModal={toggleConfigurationModal}
-              />
+              framesList={framesList}
+              globalOptions={globalOptions}
+              updateGlobalOptions={updateGlobalOptions}
+              toggleConfigurationModal={toggleConfigurationModal}
+            />
           </Container>
           <Separator />
           {rosStatus === ROS_SOCKET_STATUSES.CONNECTED && (
@@ -132,10 +132,14 @@ class Sidebar extends React.Component {
                   const relatedTopics = _.filter(rosTopics, t =>
                     _.includes(vizObject.additionalMessageTypes, t.messageType),
                   );
-                  const vizInstance = _.filter(
+                  let vizInstance = _.filter(
                     vizInstances,
                     v => v.key === vizItem.key,
                   );
+                  // TODO: This seems like a HACK but it was necessary to get the joints stuff to work when loading a fresh robot model
+                  if (vizInstance.length === 0) {
+                    vizInstance = [vizInstances[vizInstances.length - 1]];
+                  }
                   return (
                     <VizOptions
                       options={vizItem}
