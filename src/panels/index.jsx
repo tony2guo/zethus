@@ -113,6 +113,13 @@ class Wrapper extends React.Component {
 
   componentDidMount() {
     const { rosEndpoint } = this.state;
+
+    window.addEventListener('beforeunload', function(e) {
+      e.preventDefault();
+      e.returnValue = '';
+      if (this.ros && this.ros.close) this.ros.close();
+    });
+
     this.ros.on('error', () => {
       this.setState({
         rosStatus: ROS_SOCKET_STATUSES.CONNECTION_ERROR,
