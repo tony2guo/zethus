@@ -1,6 +1,6 @@
 {
   "name": "@robostack/zethus",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "description": "Realtime robot data visualization in the browser",
   "main": "build-lib/zethus.umd.js",
   "homepage": "https://rapyuta-robotics.github.io/zethus",
@@ -46,7 +46,7 @@
     "three": "^0.117.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.app.dev.js",
+    "start": "webpack-dev-server --config webpack.app.dev.js --host 192.168.64.6",
     "build": "webpack --config webpack.app.prod.js",
     "build-lib": "webpack --config webpack.lib.prod.js",
     "lint": "eslint src/**/*.{js,jsx} --fix",
