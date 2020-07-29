@@ -31,8 +31,8 @@ class RobotModelLinksJoints extends React.PureComponent {
 
     if (vizInstance) {
       let v = vizInstance;
-      let rest = null;
-      if (Array.isArray(vizInstance)) [v, ...rest] = vizInstance;
+      const rest = null;
+      if (Array.isArray(vizInstance)) [v] = vizInstance;
 
       const urdfObject = v ? v.urdfObject : null;
       joints = urdfObject ? urdfObject.joints : null;
