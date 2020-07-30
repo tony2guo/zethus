@@ -47,7 +47,6 @@ export const DEFAULT_CONFIG = {
   },
   ros: {
     endpoint: `ws://${window.location.host}/jupyterlab-ros/bridge`,
-    // endpoint: "ws://localhost:9090"
   },
   infoTabs: [],
   visualizations: [],

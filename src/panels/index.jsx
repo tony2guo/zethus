@@ -114,10 +114,14 @@ class Wrapper extends React.Component {
   componentDidMount() {
     const { rosEndpoint } = this.state;
 
-    window.addEventListener('beforeunload', function(e) {
+    window.addEventListener('beforeunload', e => {
       e.preventDefault();
-      e.returnValue = '';
-      if (this.ros && this.ros.close) this.ros.close();
+
+      if (this.ros && this.ros.close) {
+        this.ros.close();
+        console.log('[ZETHUS] connection close.');
+      }
+      return undefined;
     });
 
     this.ros.on('error', () => {
