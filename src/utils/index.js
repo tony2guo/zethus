@@ -4,9 +4,12 @@ import { TF_MESSAGE_TYPES } from './vizOptions';
 
 const { DEFAULT_OPTIONS_SCENE } = CONSTANTS;
 
-const url = `${window.location.protocol === 'https:' ? 'wss' : 'ws'}://${
-  window.location.host
-}/jupyterlab-ros/bridge`;
+const baseUrl = `${window.location.host}/${
+  window.location.pathname.split('/')[1]
+}`;
+const url = `${
+  window.location.protocol === 'https:' ? 'wss' : 'ws'
+}://${baseUrl}/jupyterlab-ros/bridge`;
 
 export const ROS_SOCKET_STATUSES = {
   INITIAL: 'Not Connected',
