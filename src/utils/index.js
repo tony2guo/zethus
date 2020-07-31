@@ -4,6 +4,10 @@ import { TF_MESSAGE_TYPES } from './vizOptions';
 
 const { DEFAULT_OPTIONS_SCENE } = CONSTANTS;
 
+const url = `${window.location.protocol === 'https:' ? 'wss' : 'ws'}://${
+  window.location.host
+}/jupyterlab-ros/bridge`;
+
 export const ROS_SOCKET_STATUSES = {
   INITIAL: 'Not Connected',
   CONNECTING: 'Connecting',
@@ -46,7 +50,7 @@ export const DEFAULT_CONFIG = {
     },
   },
   ros: {
-    endpoint: `ws://${window.location.host}/jupyterlab-ros/bridge`,
+    endpoint: url,
   },
   infoTabs: [],
   visualizations: [],
