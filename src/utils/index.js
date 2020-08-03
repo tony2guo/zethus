@@ -4,13 +4,6 @@ import { TF_MESSAGE_TYPES } from './vizOptions';
 
 const { DEFAULT_OPTIONS_SCENE } = CONSTANTS;
 
-const baseUrl = `${window.location.host}/${
-  window.location.pathname.split('/')[1]
-}`;
-const url = `${
-  window.location.protocol === 'https:' ? 'wss' : 'ws'
-}://${baseUrl}/jupyterlab-ros/bridge`;
-
 export const ROS_SOCKET_STATUSES = {
   INITIAL: 'Not Connected',
   CONNECTING: 'Connecting',
@@ -37,6 +30,20 @@ export const downloadFile = (content, filename, options = {}) => {
   element.click();
   document.body.removeChild(element);
 };
+
+const pathname = window.location.pathname.split('/');
+const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+let baseUrl = window.location.host;
+
+if (pathname.length > 4) {
+  pathname.pop();
+  pathname.pop();
+  pathname.pop();
+  baseUrl += pathname.join('/');
+}
+
+// console.log("BASEURL:", baseUrl);
+const url = `${protocol}://${baseUrl}/jupyterlab-ros/bridge`;
 
 export const DEFAULT_CONFIG = {
   panels: {

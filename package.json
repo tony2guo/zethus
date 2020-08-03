@@ -1,6 +1,6 @@
 {
   "name": "@robostack/zethus",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "description": "Realtime robot data visualization in the browser",
   "main": "build-lib/zethus.umd.js",
   "homepage": "https://rapyuta-robotics.github.io/zethus",
@@ -52,7 +52,8 @@
     "lint": "eslint src/**/*.{js,jsx} --fix",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "prettier": "prettier src/**/* --write"
+    "prettier": "prettier src/**/* --write",
+    "jupyter": "rm -r ../jupyterlab-ros/jupyterlab_ros_server/public/* && cp -r build/* ../jupyterlab-ros/jupyterlab_ros_server/public/"
   },
   "browserslist": [
     ">0.2%",
