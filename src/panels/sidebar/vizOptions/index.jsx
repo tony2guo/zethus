@@ -42,10 +42,12 @@ const VizOptions = ({
 
   const updateVizOptionsWrapper = e => {
     if (vizType === VIZ_TYPE_INTERACTIVEMARKER) {
+      const imarkerTopic = e.target.value;
+      const tElems = imarkerTopic.split('/').pop();
       updateVizOptions(key, {
         topicName: e.target.value,
-        updateTopicName: undefined,
-        feedbackTopicName: undefined,
+        updateTopicName: `${tElems.join('/')}/update`,
+        feedbackTopicName: `${tElems.join('/')}/feedback`,
       });
       return;
     }
