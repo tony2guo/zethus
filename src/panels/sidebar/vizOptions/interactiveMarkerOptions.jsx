@@ -29,16 +29,11 @@ class InteractiveMarkerOptions extends React.PureComponent {
       relatedTopics,
       t => t.messageType === MESSAGE_TYPE_INTERACTIVEMARKER_FEEDBACK,
     );
-
     updateVizOptions(key, {
-      updateTopicName: {
-        name: this.updateTopics.length > 0 ? this.updateTopics[0].name : '',
-        messageType: MESSAGE_TYPE_INTERACTIVEMARKER_UPDATE,
-      },
-      feedbackTopicName: {
-        name: this.feedbackTopics.length > 0 ? this.feedbackTopics[0].name : '',
-        messageType: MESSAGE_TYPE_INTERACTIVEMARKER_FEEDBACK,
-      },
+      updateTopicName:
+        this.updateTopics.length > 0 ? this.updateTopics[0].name : '',
+      feedbackTopicName:
+        this.feedbackTopics.length > 0 ? this.feedbackTopics[0].name : '',
     });
   }
 

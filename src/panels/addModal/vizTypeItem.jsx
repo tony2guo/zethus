@@ -64,7 +64,12 @@ class VizTypeItem extends React.PureComponent {
                   ? { label: topicName, value: topicName }
                   : ''
               }
-              options={_.map(rosParams, p => ({ label: p, value: p }))}
+              options={_.map(
+                _.filter(rosParams, p => p.includes('robot_description')),
+                p => {
+                  return { label: p, value: p };
+                },
+              )}
               onChange={({ value }) => {
                 selectViz(vizDetails.type, value, '');
               }}
