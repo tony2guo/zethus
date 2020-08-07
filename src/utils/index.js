@@ -43,7 +43,7 @@ if (pathname.length > 4) {
 }
 
 // console.log("BASEURL:", baseUrl);
-const url = `${protocol}://${baseUrl}/jupyterlab-ros/bridge`;
+const url = `${protocol}://${baseUrl}/ros/bridge`;
 
 export const DEFAULT_CONFIG = {
   panels: {

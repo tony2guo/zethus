@@ -63,7 +63,7 @@ class RobotModelOptions extends React.Component {
         this.setState({
           packages: _.mapValues(
             _.keyBy(packages),
-            p => `${baseUrl}/jupyterlab-ros/rospkgs/${p}`,
+            p => `${baseUrl}/ros/pkgs/${p}`,
           ),
           status: statuses.loaded,
         });
