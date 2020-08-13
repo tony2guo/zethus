@@ -13,7 +13,7 @@ class Zethus extends React.Component {
   constructor(props) {
     super(props);
     const providedConfig =
-      props.configuration || store.get('zethus_config') || {};
+      props.configuration //|| store.get('zethus_config') || {};
 
     // Empty object is required or the merge function mutates default config
     this.state = {
